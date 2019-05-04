@@ -14,10 +14,10 @@
 		{
 			Cull Front
 			CGPROGRAM
-			#pragma vertex toonvert
+			#pragma vertex toonvert2
 			#pragma fragment toonfrag
 			#include "UnityCG.cginc"
-			#include "ToonOutline02.cginc"
+			#include "ToonOutline.cginc"
 			ENDCG
 		}
 		Pass

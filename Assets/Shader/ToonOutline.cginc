@@ -15,6 +15,7 @@ sampler2D _MainTex;
 float4 _MainTex_ST;
 float _Outline;
 float4 _OutlineColor;
+
 toonv2f toonvert (toonappdata v)
 {
     toonv2f o;
@@ -28,6 +29,18 @@ toonv2f toonvert (toonappdata v)
     return o;
 }
 
+//在世界空间下
+toonv2f toonvert2 (toonappdata v)
+{
+    toonv2f o;
+    float3 wpos = mul(unity_ObjectToWorld,fixed4(v.vertex.xyz,1)) + mul(v.normal,unity_WorldToObject)  * _Outline;
+    float3 mvNormal = mul(UNITY_MATRIX_IT_MV,v.normal);
+
+    o.vertex = mul(unity_MatrixVP,fixed4(wpos,v.vertex.w));
+    
+    o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+    return o;
+}
 fixed4 toonfrag (toonv2f i) : SV_Target
 {
     // sample the texture
