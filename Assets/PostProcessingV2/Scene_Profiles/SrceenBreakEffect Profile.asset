@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Name: SrceenBreakEffect Profile
+  m_EditorClassIdentifier: 
+  settings:
+  - {fileID: 114457768296270238}
+  - {fileID: 114578225060550334}
+--- !u!114 &114457768296270238
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 15
+  threshold:
+    overrideState: 1
+    value: 0.97
+  softKnee:
+    overrideState: 1
+    value: 0.6
+  clamp:
+    overrideState: 0
+    value: 1.48
+  diffusion:
+    overrideState: 1
+    value: 6
+  anamorphicRatio:
+    overrideState: 1
+    value: -0.663
+  color:
+    overrideState: 1
+    value:
+      r: 0.5955882
+      g: 0.45206714
+      b: 0.35910466
+      a: 1
+  fastMode:
+    overrideState: 1
+    value: 1
+  dirtTexture:
+    overrideState: 0
+    value: {fileID: 2800000, guid: d97e8841c70bbe94b81ecf058e91ce10, type: 3}
+    defaultState: 1
+  dirtIntensity:
+    overrideState: 0
+    value: 1.41
+--- !u!114 &114578225060550334
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 0
+  color:
+    overrideState: 1
+    value:
+      r: 0.0032439474
+      g: 0.057138134
+      b: 0.1102941
+      a: 1
+  center:
+    overrideState: 1
+    value: {x: 0.5, y: 1.19}
+  intensity:
+    overrideState: 1
+    value: 0.249
+  smoothness:
+    overrideState: 1
+    value: 0.4
+  roundness:
+    overrideState: 1
+    value: 0.378
+  rounded:
+    overrideState: 1
+    value: 1
+  mask:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  opacity:
+    overrideState: 0
+    value: 1
