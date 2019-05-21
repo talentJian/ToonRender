@@ -13,11 +13,31 @@ Shader "ZShader/Toon/BBBody01"
 		_Shininess("高光系数",Float) = 10
 		_SpecMulti("高光强度",Float) = 0.2
 		_LightSpecColor("高光颜色",Color ) =(1,1,1)
+
+		//OutLine部分使用
+		_Outline_Width ("Outline_Width", Float ) = 1
+        _MaxOutLine ("_MaxOutLine", Range(0,10) ) = 1
+        _Outline_Color ("Outline_Color", Color) = (0.5,0.5,0.5,1)
+		[Toggle(_isOutlineMulMainCol)]_isOutlineMulMainCol("颜色叠贴图",Float) = 1
 	}
 	SubShader
 	{
 		Tags { "RenderType"="Opaque" }
-
+		Pass
+		{
+			Name "OUTLNIE"
+			//Blend [_SrcBlend][_DstBlend]
+			Cull Front
+			CGPROGRAM
+			#pragma shader_feature _isOutlineMulMainCol
+			#include "UnityCG.cginc"
+			#include "Lighting.cginc"
+			#include "ToonOutLineSE.cginc"
+			
+			#pragma vertex toonOutline_vert
+			#pragma fragment toonOutline_frag
+			ENDCG
+		}
 		Pass
 		{
 			Tags{

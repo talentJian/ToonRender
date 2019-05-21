@@ -71,10 +71,12 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _LightArea: 0.51
+    - _MaxOutLine: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Outline: 0.1
+    - _Outline_Width: 1.5
     - _Parallax: 0.02
     - _SecondShadow: 0.51
     - _Shiniess: 0.5
@@ -85,6 +87,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _isOutlineMulMainCol: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
@@ -92,4 +95,5 @@ Material:
     - _FirstShadowMultColor: {r: 0.7, g: 0.6, b: 0.65, a: 1}
     - _LightSpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Outline_Color: {r: 0.58823526, g: 0.3436344, b: 0.23356402, a: 1}
     - _SecondShadowMultColor: {r: 0.65, g: 0.45, b: 0.54, a: 1}
