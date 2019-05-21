@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: d609bf31304d29a4e8a889de924395b5
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Face_087
+    100002: //RootNode
+    100004: Winter_Body_0
+    100006: Winter_Body_1
+    100008: Winter_Body_2
+    100010: Winter_Clothes_0
+    100012: Winter_Clothes_1
+    100014: Winter_Clothes_2
+    100016: Winter_Hair_0
+    100018: Winter_Hair_1
+    100020: Winter_Hair_2
+    400000: Face_087
+    400002: //RootNode
+    400004: Winter_Body_0
+    400006: Winter_Body_1
+    400008: Winter_Body_2
+    400010: Winter_Clothes_0
+    400012: Winter_Clothes_1
+    400014: Winter_Clothes_2
+    400016: Winter_Hair_0
+    400018: Winter_Hair_1
+    400020: Winter_Hair_2
+    2100000: _Winter_Clothesdefault
+    2100002: _Winter_Bodydefault
+    2100004: _Winter_Hairdefault
+    2100006: '_Face #239417default'
+    2300000: Face_087
+    2300002: Winter_Body_0
+    2300004: Winter_Body_1
+    2300006: Winter_Body_2
+    2300008: Winter_Clothes_0
+    2300010: Winter_Clothes_1
+    2300012: Winter_Clothes_2
+    2300014: Winter_Hair_0
+    2300016: Winter_Hair_1
+    2300018: Winter_Hair_2
+    3300000: Face_087
+    3300002: Winter_Body_0
+    3300004: Winter_Body_1
+    3300006: Winter_Body_2
+    3300008: Winter_Clothes_0
+    3300010: Winter_Clothes_1
+    3300012: Winter_Clothes_2
+    3300014: Winter_Hair_0
+    3300016: Winter_Hair_1
+    3300018: Winter_Hair_2
+    4300000: Winter_Body_0
+    4300002: Winter_Body_1
+    4300004: Winter_Body_2
+    4300006: Winter_Clothes_0
+    4300008: Winter_Clothes_1
+    4300010: Winter_Clothes_2
+    4300012: Winter_Hair_0
+    4300014: Winter_Hair_1
+    4300016: Winter_Hair_2
+    4300018: Face_087
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

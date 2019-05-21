@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: fc7366a36d388e04baf5376f1428a040
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _FlowMap: {instanceID: 0}
+  - _FlowMask: {instanceID: 0}
+  userData: 
+  assetBundleName: shader.unity3d
+  assetBundleVariant: 
