@@ -7,6 +7,7 @@ Shader "ZShader/Toon/BBBody01"
 		_LightMapTex("_LightMapTex",2D) = "black"{}
 		_LightArea("LightArea",Float) = 0.5
 		_SecondShadow("_SecondShadow",Float) = 0.5
+		_ShadowWidthSmooth("阴影平滑度",Range(0,0.2))=0
 
 		_FirstShadowMultColor("第一层阴影叠加色",Color) =(0.72,0.6,0.65)
 		_SecondShadowMultColor("第二层阴影叠加色",Color) =(0.5,0.5,0.5)
@@ -26,6 +27,7 @@ Shader "ZShader/Toon/BBBody01"
 		Pass
 		{
 			Name "OUTLNIE"
+			//Offset 20 , 1
 			//Blend [_SrcBlend][_DstBlend]
 			Cull Front
 			CGPROGRAM
@@ -74,7 +76,7 @@ Shader "ZShader/Toon/BBBody01"
 			float3 _FirstShadowMultColor,_SecondShadowMultColor;
 			float _Shininess,_SpecMulti;
 			float3 _LightSpecColor;
-
+			float _ShadowWidthSmooth;
 			v2f vert (appdata v)
 			{
 				v2f o;
@@ -93,10 +95,14 @@ Shader "ZShader/Toon/BBBody01"
 			{
 				// sample the texture
 				fixed4 col = tex2D(_MainTex, i.uv);
-				float3 lightmap = tex2D(_LightMapTex,i.uv);
-				float halfLambert = i.halfLambert;
-
+				fixed4 lightmap = tex2D(_LightMapTex,i.uv);
 				float3 worldNormal = i.worldNormal;
+				//return lightmap.g;
+				float3 lightDir = UnityWorldSpaceLightDir(i.worldPos);				
+				//float halfLambert = i.halfLambert;
+				float halfLambert = dot(worldNormal,lightDir) * 0.5 + 0.5;
+
+				
 				float3 LightDir = UnityWorldSpaceLightDir(i.worldPos);
 				float3 viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));
 				float3 halfDir =  normalize(LightDir + viewDir);
@@ -104,16 +110,22 @@ Shader "ZShader/Toon/BBBody01"
 
 				// float mask01 = lightmap.g * i.vertexColor.r;
 				
-				float3 firstCol = col.rgb * _FirstShadowMultColor;
-				float3 secondCol = col.rgb * _SecondShadowMultColor;
+				float3 firstCol = lerp(col.rgb * _FirstShadowMultColor ,col.rgb,1-i.vertexColor.b);
+				float3 secondCol = lerp(col.rgb * _SecondShadowMultColor ,col.rgb,1-i.vertexColor.b);
+				// float3 secondCol = col.rgb * _SecondShadowMultColor ;
 
 				float3 diffuse = 0;
-				float diffuseMask = lightmap.g * i.vertexColor.r;
+				//float diffuseMask = ceil((lightmap.g * i.vertexColor.r) * 10)/10; // 去掉更地位的小数，减少噪点
+				fixed diffuseMask = lightmap.g * i.vertexColor.r;
 				//不是特别暗的地方
 				if(diffuseMask > 0.1)
 				{
 					float firstmask = diffuseMask > 0.5? diffuseMask *1.2 - 0.1 : diffuseMask * 1.25-0.125;
+					
+					// fixed diffuseStep =  smoothstep(0,_ShadowWidthSmooth,saturate(diffuseMask  - _LightArea));
+					
 					bool isLight = (firstmask + halfLambert) * 0.5 > _LightArea;
+					//bool isLight = ceil((firstmask + halfLambert) * 0.5 * 10) / 10 >= _LightArea;
 					diffuse = isLight ? col.rgb : firstCol;
 				}
 				//决定比较暗的地方
@@ -121,7 +133,7 @@ Shader "ZShader/Toon/BBBody01"
 					bool isfirst = (diffuseMask + halfLambert) * 0.5 > _SecondShadow;
 					diffuse = isfirst ? firstCol : secondCol;
 				}
-				
+				//diffuse ;
 
 				//高光
 				float shinepow = max(pow(NDotH,_Shininess),0);
